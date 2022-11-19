@@ -45,6 +45,8 @@ public class PatientMonitoringServiceImpl implements PatientMonitoringService {
 			Integer lowerbound = Integer.valueOf(patientData.getBloodPressure().split("/")[0]);
 			if (((upperbound > 120) && (upperbound < 140)) || ((lowerbound > 80) && lowerbound < 90)) {
 				patientData.setBloodPressureStatus("The BloodPressure is slightly high");
+			} else {
+				patientData.setBloodPressureStatus("The BloodPressure is normal");
 			}
 
 			if ((upperbound > 140) || (lowerbound > 90)) {
